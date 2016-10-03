@@ -299,7 +299,7 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendTextMessage(senderID, "Hi friend");
+        sendTextMessage(senderID, "Your reply text here!!");
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
