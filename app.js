@@ -1,3 +1,4 @@
+
 'use strict';
 
 const 
@@ -43,6 +44,7 @@ const SERVER_URL = (process.env.SERVER_URL) ?
 
 if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
   console.error("a Missing config values App Secret is:", APP_SECRET, "Val token is:", VALIDATION_TOKEN, "Acces token:", PAGE_ACCESS_TOKEN, '\nServer URL:', SERVER_URL);
+
   process.exit(1);
 }
 
@@ -61,13 +63,6 @@ app.get('/webhook', function(req, res) {
     res.sendStatus(403);          
   }  
 });
-
-/*
- My (Hasan's) Code from prev/ app
- access_token: 'EAAQA8eJNThwBALBn6mIbdjFmElIRe3IllqEVoIF89UdksnumZCbfOmouKc08VZBGptBEbOc66PRZCOujLa4OF9RAkZCYWUZCtLUBlMFRDffRT2pYZBlA4p7udgVnH9N9GqpZCBPhpEZAH3NZC17I26MPJ91B9WSnZBbg0e3wqf07jaigZDZD',
-    verify_token: 'VERIFY_TOKEN',
- */
-
 
 /*
  * All callbacks for Messenger are POST-ed. They will be sent to the same
@@ -802,7 +797,11 @@ function sendAccountLinking(recipientId) {
 function callSendAPI(messageData) {
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
+<<<<<<< HEAD
     qs: { access_token: "EAAQA8eJNThwBALBn6mIbdjFmElIRe3IllqEVoIF89UdksnumZCbfOmouKc08VZBGptBEbOc66PRZCOujLa4OF9RAkZCYWUZCtLUBlMFRDffRT2pYZBlA4p7udgVnH9N9GqpZCBPhpEZAH3NZC17I26MPJ91B9WSnZBbg0e3wqf07jaigZDZD" },
+=======
+    qs: { access_token: PAGE_ACCESS_TOKEN },
+>>>>>>> 99444423ac8149bf1d7c281f21ce457260e2f73f
     method: 'POST',
     json: messageData
 
