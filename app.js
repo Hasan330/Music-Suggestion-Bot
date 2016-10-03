@@ -797,11 +797,9 @@ function sendAccountLinking(recipientId) {
 function callSendAPI(messageData) {
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
-<<<<<<< HEAD
+
     qs: { access_token: "EAAQA8eJNThwBALBn6mIbdjFmElIRe3IllqEVoIF89UdksnumZCbfOmouKc08VZBGptBEbOc66PRZCOujLa4OF9RAkZCYWUZCtLUBlMFRDffRT2pYZBlA4p7udgVnH9N9GqpZCBPhpEZAH3NZC17I26MPJ91B9WSnZBbg0e3wqf07jaigZDZD" },
-=======
-    qs: { access_token: PAGE_ACCESS_TOKEN },
->>>>>>> 99444423ac8149bf1d7c281f21ce457260e2f73f
+
     method: 'POST',
     json: messageData
 
