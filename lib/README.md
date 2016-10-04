@@ -7,6 +7,7 @@ Logic:
 	c) suggest relevant song (then ask the user how relevant that song was in terms of genre, song choice, aggressiveness, etc..)
 	d) what's new
 	e) schedule song sending to user
+	f) Suggest songs per topic (Ex: Songs about love, war, etc..)
 3) User selects applicable criteria and bot deals with it accordingly
 
 Future Plans:

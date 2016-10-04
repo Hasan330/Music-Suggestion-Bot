@@ -8,7 +8,7 @@ const
     https = require('https'),
     request = require('request');
 
-var handleMessage = require("./lib/classifier");
+var handleMessage = require("./lib/handler");
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -300,15 +300,13 @@ function receivedMessage(event) {
                 break;
 
             default:
-                handleMessage.run(event);
+                handleMessage.run(event);  //handle message in the classifier class BOOKMARK
 
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
     }
 }
-
-// sendTextMessage(senderID, "Handling request"); //STARTING POINT BOOKMARK
 
 
 
