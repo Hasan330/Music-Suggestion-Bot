@@ -1,4 +1,3 @@
-
 'use strict';
 
 const 
@@ -8,6 +7,8 @@ const
   express = require('express'),
   https = require('https'),  
   request = require('request');
+
+var handleMessage = require("./lib/classifier");
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -299,7 +300,8 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendTextMessage(senderID, "Your reply text here!!");
+        handleMessage.run(event);
+        // sendTextMessage(senderID, "Your reply text here!!");  //STARTING POINT BOOKMARK
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
@@ -505,6 +507,19 @@ function sendFileMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  * Send a text message using the Send API.
  *
@@ -519,6 +534,21 @@ function sendTextMessage(recipientId, messageText) {
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   callSendAPI(messageData);
 }
