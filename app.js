@@ -534,24 +534,22 @@ function sendTextMessage(recipientId, messageText) {
       metadata: "DEVELOPER_DEFINED_METADATA"
     }
   };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   callSendAPI(messageData);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
  * Send a button message using the Send API.
