@@ -16,5 +16,8 @@ Future Plans:
 4) 
 
 
+Locally:
+
+cd Facebook\ Bot/messenger-platform-samples/node/ 
 git commit -am "desired message"
 sudo git push heroku master
