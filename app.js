@@ -8,7 +8,7 @@ const
   https = require('https'),  
   request = require('request');
 
-var handleMessage = require("./lib/classifier");
+// var handleMessage = require("./lib/classifier");
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -300,14 +300,14 @@ function receivedMessage(event) {
         break;
 
       default:
-        handleMessage.run(event);
-        // sendTextMessage(senderID, "Your reply text here!!");  //STARTING POINT BOOKMARK
+        sendTextMessage(senderID, "Your reply text here!!");  //STARTING POINT BOOKMARK
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
   }
 }
 
+        // handleMessage.run(event);
 
 /*
  * Delivery Confirmation Event

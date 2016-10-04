@@ -21,3 +21,8 @@ Locally:
 cd Facebook\ Bot/messenger-platform-samples/node/ 
 git commit -am "desired message"
 sudo git push heroku master
+
+
+when this error appears (Error: listen EADDRINUSE :::5000)
+	ps aux | grep node
+	kill -9 $PID
