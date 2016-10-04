@@ -300,15 +300,16 @@ function receivedMessage(event) {
                 break;
 
             default:
-                {
-                    sendTextMessage(senderID, "Handling request"); //STARTING POINT BOOKMARK
-                    handleMessage.run(event);
-                }
+                handleMessage.run(event);
+
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
     }
 }
+
+// sendTextMessage(senderID, "Handling request"); //STARTING POINT BOOKMARK
+
 
 
 /*
