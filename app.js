@@ -9,10 +9,9 @@ const
     request = require('request');
 
 
-// var handleMessage = require("./lib/handler");
+var handleMessage = require("./lib/handler");
 
 var app = express();
-// app.set('port',  5000);
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
@@ -307,7 +306,8 @@ function receivedMessage(event) {
 
             default:
                 console.log("Mahmoud heik biddo")
-                sendTextMessage(senderID, "Heik biddo yzbot");
+                // sendTextMessage(senderID, "Heik biddo yzbot");
+                handleMessage.run(event);  //handle message in the classifier class BOOKMARK
 
 
         }
@@ -316,7 +316,6 @@ function receivedMessage(event) {
     }
 }
 
-// handleMessage.run(event);  //handle message in the classifier class BOOKMARK
 
 
 /*
