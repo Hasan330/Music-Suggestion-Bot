@@ -46,9 +46,11 @@ const SERVER_URL = (process.env.SERVER_URL) ?
     config.get('serverURL');
 
 if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
-    console.error("a Missing config values App Secret is:", APP_SECRET, "Val token is:", VALIDATION_TOKEN, "Acces token:", PAGE_ACCESS_TOKEN, '\nServer URL:', SERVER_URL);
-
+    console.error("Missing config values App Secret is:", APP_SECRET, "Val token is:", VALIDATION_TOKEN, "Acces token:", PAGE_ACCESS_TOKEN, '\nServer URL:', SERVER_URL);
     process.exit(1);
+}
+else{
+    console.error("\n\nConfigs found: App Secret is:", APP_SECRET, "Val token is:", VALIDATION_TOKEN, "Acces token:", PAGE_ACCESS_TOKEN, '\nServer URL:', SERVER_URL);
 }
 
 /*
@@ -87,7 +89,8 @@ app.post('/webhook', function(req, res) {
 
             // Iterate over each messaging event
             pageEntry.messaging.forEach(function(messagingEvent) {
-                console.log("Received event", messagingEvent)
+                console.log("\n\n\nReceived event", messagingEvent)
+                
                 if (messagingEvent.optin) {
                     receivedAuthentication(messagingEvent);
                 } else if (messagingEvent.message) {
@@ -842,6 +845,7 @@ function callSendAPI(messageData) {
             if (messageId) {
                 console.log("Successfully sent message with id %s to recipient %s",
                     messageId, recipientId);
+                console.log("\n\n\nSent object:", body)
             } else {
                 console.log("Successfully called Send API for recipient %s",
                     recipientId);
