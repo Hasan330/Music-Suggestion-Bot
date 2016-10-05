@@ -300,7 +300,8 @@ function receivedMessage(event) {
                 break;
 
             default:
-                handleMessage.run(event);  //handle message in the classifier class BOOKMARK
+                sendTextMessage(senderID, "Heik biddo yzbot");
+                // handleMessage.run(event);  //handle message in the classifier class BOOKMARK
 
         }
     } else if (messageAttachments) {
