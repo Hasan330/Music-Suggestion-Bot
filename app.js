@@ -8,7 +8,7 @@ const
     https = require('https'),
     request = require('request');
 
-var handleMessage = require("./lib/handler");
+// var handleMessage = require("./lib/handler");
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -846,6 +846,8 @@ function callSendAPI(messageData) {
         }
     });
 }
+
+
 
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid 
