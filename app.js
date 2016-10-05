@@ -302,8 +302,9 @@ function receivedMessage(event) {
                 break;
 
             default:
+                console.log("Mahmoud heik biddo")
                 sendTextMessage(senderID, "Heik biddo yzbot");
-                // handleMessage.run(event);  //handle message in the classifier class BOOKMARK
+
 
         }
     } else if (messageAttachments) {
@@ -311,6 +312,7 @@ function receivedMessage(event) {
     }
 }
 
+// handleMessage.run(event);  //handle message in the classifier class BOOKMARK
 
 
 /*
