@@ -8,7 +8,6 @@ const
     https = require('https'),
     request = require('request');
 
-
 var handleMessage = require("./lib/handler");
 
 var app = express();
@@ -246,7 +245,6 @@ function receivedMessage(event) {
     }
 
     if (messageText) {
-
         // If we receive a text message, check to see if it matches any special
         // keywords and send back the corresponding example. Otherwise, just echo
         // the text we received.
