@@ -9,6 +9,7 @@ const
     request = require('request');
 
 var handleMessage = require("./lib/handler");
+var reply = require("./lib/sendToUser")
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -250,11 +251,11 @@ function receivedMessage(event) {
         // the text we received.
         switch (messageText) {
             case 'button':
-                sendButtonMessage(senderID);
+                reply.sendButtonMessage(senderID);
                 break;
             default:
                 console.log("Mahmoud heik biddo")
-                sendTextMessage(senderID, "Heik biddo yzbot");
+                reply.sendTextMessage(senderID, "Heik biddo yzbot");
                 handleMessage.run(event); //handle message in the classifier class BOOKMARK
         }
     } else if (messageAttachments) {
@@ -349,57 +350,6 @@ function receivedAccountLink(event) {
     console.log("Received account link event with for user %d with status %s " +
         "and auth code %s ", senderID, status, authCode);
 }
-
-
-
-// Send a text message using the Send API.
-function sendTextMessage(recipientId, messageText) {
-    var messageData = {
-        recipient: {
-            id: recipientId
-        },
-        message: {
-            text: messageText,
-            metadata: "DEVELOPER_DEFINED_METADATA"
-        }
-    };
-    callSendAPI(messageData);
-}
-
-
-/*
- * Call the Send API. The message data goes in the body. If successful, we'll 
- * get the message id in a response 
- *
- */
-function callSendAPI(messageData) {
-    request({
-        uri: 'https://graph.facebook.com/v2.6/me/messages',
-
-        qs: { access_token: "EAAQA8eJNThwBALBn6mIbdjFmElIRe3IllqEVoIF89UdksnumZCbfOmouKc08VZBGptBEbOc66PRZCOujLa4OF9RAkZCYWUZCtLUBlMFRDffRT2pYZBlA4p7udgVnH9N9GqpZCBPhpEZAH3NZC17I26MPJ91B9WSnZBbg0e3wqf07jaigZDZD" },
-
-        method: 'POST',
-        json: messageData
-
-    }, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
-            var recipientId = body.recipient_id;
-            var messageId = body.message_id;
-
-            if (messageId) {
-                console.log("Successfully sent message with id %s to recipient %s",
-                    messageId, recipientId);
-                console.log("\n\n\nSent object:", body)
-            } else {
-                console.log("Successfully called Send API for recipient %s",
-                    recipientId);
-            }
-        } else {
-            console.error(response.error);
-        }
-    });
-}
-
 
 
 // Start server
