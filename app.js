@@ -254,9 +254,8 @@ function receivedMessage(event) {
                 reply.sendButtonMessage(senderID);
                 break;
             default:
-                console.log("Mahmoud heik biddo")
-                reply.sendTextMessage(senderID, "Heik biddo yzbot");
-                handleMessage.run(event); //handle message in the classifier class BOOKMARK
+                // reply.sendTextMessage(senderID, "Heik biddo yzbot");
+                handleMessage.run(event); //handle message in the handler module BOOKMARK
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
