@@ -1,0 +1,51 @@
+{
+    "greetings": [{
+            "hi": "greetings",
+            "hello": "greetings",
+            "marhaba": "greetings",
+            "aloha": "greetings",
+            "hey": "greetings",
+            "howdy": "greetings",
+        }
+
+    ],
+
+    "genres": [{
+        "hiphop": "hip-hop",
+        "hip-hop": "hip-hop",
+        "jazz": "jazz",
+        "rnb": "rnb",
+        "country": "country",
+        "rock": "rock",
+        "metal": "metal",
+        "instrumental": "instrumental",
+        "jazz": "jazz",
+    }],
+
+    "dislike": [{
+        "sucks": "dislike",
+        "ugly ugliest": "dislike",
+        "eww": "dislike",
+        "don't like": "dislike",
+        "bad": "dislike",
+        "terrible": "dislike",
+        "worst worse": "dislike",
+        "noisy": "dislike",
+        "dislike": "dislike",
+    }],
+
+    "like": [{
+        "beautiful": "like",
+        "wow": "like",
+        "nice": "like",
+        "cool": "like",
+        "cute": "like",
+        "great": "like",
+        "good": "like",
+        "calm calming": "like",
+        "like": "like",
+        "amazing": "like",
+    }],
+
+
+}
