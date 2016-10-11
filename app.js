@@ -254,7 +254,7 @@ function receivedMessage(event) {
                 reply.sendButtonMessage(senderID);
                 break;
             default:
-                // reply.sendTextMessage(senderID, "Heik biddo yzbot");
+                reply.sendTextMessage(senderID, "in app.js");
                 handleMessage.run(event); //handle message in the handler module BOOKMARK
         }
     } else if (messageAttachments) {
