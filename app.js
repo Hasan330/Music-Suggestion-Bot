@@ -8,7 +8,7 @@ const
     https = require('https'),
     request = require('request');
 
-// var handleMessage = require("./lib/handler");
+var handleMessage = require("./lib/handler");
 var reply = require("./lib/sendToUser")
 
 // global.isCreated = false;
