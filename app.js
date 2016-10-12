@@ -261,7 +261,7 @@ function receivedMessage(event) {
                 break;
             default:
                 reply.sendTextMessage(senderID, "in app.js");
-                // handleMessage.run(event); //handle message in the handler module BOOKMARK
+                handleMessage.run(event); //handle message in the handler module BOOKMARK
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
