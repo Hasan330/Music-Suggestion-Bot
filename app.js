@@ -220,7 +220,7 @@ function receivedMessage(event) {
     var timeOfMessage = event.timestamp;
     var message = event.message;
 
-    reply.sendTextMessage(senderID, "received message in app.js");
+    // reply.sendTextMessage(senderID, "received message in app.js");
 
 
     console.log("Received message for user %d and page %d at %d with message:",
