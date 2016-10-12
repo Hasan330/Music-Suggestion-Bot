@@ -260,7 +260,7 @@ function receivedMessage(event) {
                 reply.sendButtonMessage(senderID);
                 break;
             default:
-                reply.sendTextMessage(senderID, "in app.js");
+                // reply.sendTextMessage(senderID, "in app.js");
                 handleMessage.run(event); //handle message in the handler module BOOKMARK
         }
     } else if (messageAttachments) {
