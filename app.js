@@ -8,7 +8,7 @@ const
     https = require('https'),
     request = require('request');
 
-var handleMessage = require("./lib/handler");
+// var handleMessage = require("./lib/handler");
 var reply = require("./lib/sendToUser")
 
 // global.isCreated = false;
@@ -66,7 +66,7 @@ app.get('/webhook', function(req, res) {
         res.status(200).send(req.query['hub.challenge']);
     } else {
         console.error("Failed validation. Make sure the validation tokens match.");
-        res.sendStatus(200);
+        res.sendStatus(403);
     }
 });
 
@@ -220,6 +220,9 @@ function receivedMessage(event) {
     var timeOfMessage = event.timestamp;
     var message = event.message;
 
+    reply.sendTextMessage(senderID, "received message in app.js");
+
+
     console.log("Received message for user %d and page %d at %d with message:",
         senderID, recipientID, timeOfMessage);
     console.log(JSON.stringify(message));
@@ -258,7 +261,7 @@ function receivedMessage(event) {
                 break;
             default:
                 reply.sendTextMessage(senderID, "in app.js");
-                handleMessage.run(event); //handle message in the handler module BOOKMARK
+                // handleMessage.run(event); //handle message in the handler module BOOKMARK
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
