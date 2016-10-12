@@ -11,11 +11,14 @@ const
 var handleMessage = require("./lib/handler");
 var reply = require("./lib/sendToUser")
 
+global.isCreated = false;
+
 var app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
+
 
 /*
  * Be sure to setup your config values before running this code. You can 
