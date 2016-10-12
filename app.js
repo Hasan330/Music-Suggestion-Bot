@@ -11,11 +11,14 @@ const
 var handleMessage = require("./lib/handler");
 var reply = require("./lib/sendToUser")
 
+// global.isCreated = false;
+
 var app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
+
 
 /*
  * Be sure to setup your config values before running this code. You can 
@@ -217,6 +220,9 @@ function receivedMessage(event) {
     var timeOfMessage = event.timestamp;
     var message = event.message;
 
+    // reply.sendTextMessage(senderID, "received message in app.js");
+
+
     console.log("Received message for user %d and page %d at %d with message:",
         senderID, recipientID, timeOfMessage);
     console.log(JSON.stringify(message));
@@ -254,7 +260,7 @@ function receivedMessage(event) {
                 reply.sendButtonMessage(senderID);
                 break;
             default:
-                reply.sendTextMessage(senderID, "in app.js");
+                // reply.sendTextMessage(senderID, "in app.js");
                 handleMessage.run(event); //handle message in the handler module BOOKMARK
         }
     } else if (messageAttachments) {
