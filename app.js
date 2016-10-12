@@ -11,7 +11,7 @@ const
 var handleMessage = require("./lib/handler");
 var reply = require("./lib/sendToUser")
 
-global.isCreated = false;
+// global.isCreated = false;
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
